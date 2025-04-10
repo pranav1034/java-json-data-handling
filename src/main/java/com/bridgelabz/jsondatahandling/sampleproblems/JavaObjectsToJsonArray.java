@@ -2,6 +2,7 @@ package com.bridgelabz.jsondatahandling.sampleproblems;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.JsonArray;
+import org.json.JSONArray;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,7 +36,8 @@ public class JavaObjectsToJsonArray {
 
         ObjectMapper mapper = new ObjectMapper();
         try{
-            String jsonArray = mapper.writeValueAsString(peopleList);
+            String str = mapper.writeValueAsString(peopleList);
+            JSONArray jsonArray = new JSONArray(str);
             System.out.println(jsonArray);
         }
         catch(Exception e){
